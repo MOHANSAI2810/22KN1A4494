@@ -1,0 +1,54 @@
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.nav {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 20px;
+}
+
+.input, .button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.button {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #267a4c;
+}
+
+.output, .error {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th {
+  background-color: #f0f0f0;
+}
+
+a {
+  color: #1a0dab;
+}
