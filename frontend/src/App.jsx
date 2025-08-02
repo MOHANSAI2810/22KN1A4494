@@ -10,7 +10,7 @@ const App = () => {
         <h2 className="title">🔗 Smart URL Shortener</h2>
         <nav className="nav">
           <Link to="/">Shorten URL</Link>
-          <Link to="/stats">View Analytics</Link>
+          <Link to="/stats">History</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Shorten />} />
