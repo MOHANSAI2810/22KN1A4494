@@ -1,5 +1,7 @@
+// src/Shorten.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+
 const Shorten = () => {
   const [url, setUrl] = useState('');
   const [validity, setValidity] = useState('');
@@ -7,16 +9,18 @@ const Shorten = () => {
   const [shortLink, setShortLink] = useState('');
   const [expiry, setExpiry] = useState('');
   const [error, setError] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = { url };
     if (validity) payload.validity = parseInt(validity);
     if (shortcode) payload.shortcode = shortcode;
+
     try {
       const res = await axios.post('http://localhost:5000/shorturls', payload, {
         headers: {
-          clientID: 'df976207-d4cb-48c5-b58b-9b44f3ac1ded',
-          clientSecret: 'DYyHUByGyTKRtcmF'
+          clientID: import.meta.env.VITE_CLIENT_ID,
+          clientSecret: import.meta.env.VITE_CLIENT_SECRET
         }
       });
       setShortLink(res.data.shortLink);
@@ -28,6 +32,7 @@ const Shorten = () => {
       setError(err.response?.data?.message || 'Something went wrong!');
     }
   };
+
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
@@ -46,4 +51,5 @@ const Shorten = () => {
     </>
   );
 };
+
 export default Shorten;
